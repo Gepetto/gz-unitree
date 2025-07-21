@@ -1,0 +1,45 @@
+sdf_path := "models/h1_2_with_ground.sdf"
+dds_config := "<CycloneDDS><Domain><General><NetworkInterfaceAddress>127.0.0.1</NetworkInterfaceAddress></General></Domain></CycloneDDS>"
+
+setup:
+    #!/usr/bin/env bash
+    set -euxo pipefail
+
+    if [[ -f /etc/arch-release ]]; then
+        if ! command -v paru &> /dev/null; then
+            echo "paru is not installed. Please install paru."
+            exit 1
+        fi
+
+        paru -S gz-harmonic gz-physics=7 gz-cmake3 gz-plugin2 gz-common5 sdformat=14 urdfdom gz-sensors8 gz-sim8
+
+    elif [[ -f /etc/debian_version ]]; then
+        sudo apt-get update
+        sudo apt-get install curl lsb-release gnupg
+        sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+        sudo apt-get update
+        sudo apt-get install gz-harmonic
+    fi
+
+    cd unitree_sdk2
+    mkdir build; cd build
+    cmake .. -DCMAKE_INSTALL_PREFIX=/opt/unitree_robotics
+    sudo make install
+
+install:
+    #!/usr/bin/env bash
+    mkdir -p build
+    cd build
+    cmake ..
+    sudo mkdir -p /usr/local/lib/gz-unitree/
+    make && sudo cp libgz-unitree.so /usr/local/lib/gz-unitree/
+
+sim logfile="with_imu_on_model.log":
+    echo Dont forget to add plugin filename="gz-unitree" name="gz::unitree::UnitreePlugin" to your SDF file, in the model tag
+    just install && CYCLONEDDS_URI="{{dds_config}}" GZ_SIM_SYSTEM_PLUGIN_PATH=/usr/local/lib/gz-unitree/ gz sim {{sdf_path}} -v 4
+
+test:
+    #!/usr/bin/env bash
+    cd ../h1v2-Isaac
+    CYCLONEDDS_URI="{{dds_config}}" uv run --active deploy/sim2real.py
