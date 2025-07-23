@@ -1,5 +1,6 @@
 sdf_path := "models/h1_2_with_ground.sdf"
 dds_config := "<CycloneDDS><Domain><General><NetworkInterfaceAddress>127.0.0.1</NetworkInterfaceAddress></General></Domain></CycloneDDS>"
+camera_pose := "position { x: 1.9028059244155884, y: -2.756911039352417, z: 2.2905828952789307 }, orientation { x: -0.23666168749332428, y: 0.19653673470020294, z: 0.73200297355651855, w: 0.607895016670227 }"
 
 setup:
     #!/usr/bin/env bash
@@ -48,4 +49,5 @@ test:
         git clone https://github.com/unitreerobotics/unitree_sdk2_python
     fi
     cd h1v2-Isaac
+    gz service -s /gui/move_to/pose --reqtype gz.msgs.GUICamera --reptype gz.msgs.Boolean --timeout 2000 --req "pose: { {{ camera_pose }} }"
     CYCLONEDDS_URI="{{dds_config}}" uv run --active deploy/sim2real.py
