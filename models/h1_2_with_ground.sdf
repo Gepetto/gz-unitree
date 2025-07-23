@@ -101,7 +101,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/pelvis.STL</uri>
+              <uri>./h1_2_meshes/pelvis.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -169,7 +169,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/left_hip_yaw_link.STL</uri>
+              <uri>./h1_2_meshes/left_hip_yaw_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -237,7 +237,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_hip_pitch_link.STL</uri>
+                ./h1_2_meshes/left_hip_pitch_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -305,7 +305,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_hip_roll_link.STL</uri>
+                ./h1_2_meshes/left_hip_roll_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -372,7 +372,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/left_knee_link.STL</uri>
+              <uri>./h1_2_meshes/left_knee_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -424,7 +424,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_ankle_pitch_link.STL</uri>
+                ./h1_2_meshes/left_ankle_pitch_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -434,7 +434,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_ankle_pitch_link.STL</uri>
+                ./h1_2_meshes/left_ankle_pitch_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -486,7 +486,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_ankle_roll_link.STL</uri>
+                ./h1_2_meshes/left_ankle_roll_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -496,7 +496,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_ankle_roll_link.STL</uri>
+                ./h1_2_meshes/left_ankle_roll_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -564,7 +564,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_hip_yaw_link.STL</uri>
+                ./h1_2_meshes/right_hip_yaw_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -632,7 +632,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_hip_pitch_link.STL</uri>
+                ./h1_2_meshes/right_hip_pitch_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -700,7 +700,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_hip_roll_link.STL</uri>
+                ./h1_2_meshes/right_hip_roll_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -767,7 +767,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/right_knee_link.STL</uri>
+              <uri>./h1_2_meshes/right_knee_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -819,7 +819,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_ankle_pitch_link.STL</uri>
+                ./h1_2_meshes/right_ankle_pitch_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -829,7 +829,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_ankle_pitch_link.STL</uri>
+                ./h1_2_meshes/right_ankle_pitch_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -881,7 +881,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_ankle_roll_link.STL</uri>
+                ./h1_2_meshes/right_ankle_roll_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -891,7 +891,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_ankle_roll_link.STL</uri>
+                ./h1_2_meshes/right_ankle_roll_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -963,7 +963,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/torso_link.STL</uri>
+              <uri>./h1_2_meshes/torso_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -976,7 +976,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/logo_link.STL</uri>
+              <uri>./h1_2_meshes/logo_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1028,7 +1028,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_shoulder_pitch_link.STL</uri>
+                ./h1_2_meshes/left_shoulder_pitch_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1038,7 +1038,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_shoulder_pitch_link.STL</uri>
+                ./h1_2_meshes/left_shoulder_pitch_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1090,7 +1090,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_shoulder_roll_link.STL</uri>
+                ./h1_2_meshes/left_shoulder_roll_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1100,7 +1100,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_shoulder_roll_link.STL</uri>
+                ./h1_2_meshes/left_shoulder_roll_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1152,7 +1152,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_shoulder_yaw_link.STL</uri>
+                ./h1_2_meshes/left_shoulder_yaw_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1162,7 +1162,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_shoulder_yaw_link.STL</uri>
+                ./h1_2_meshes/left_shoulder_yaw_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1213,7 +1213,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/left_elbow_link.STL</uri>
+              <uri>./h1_2_meshes/left_elbow_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1222,7 +1222,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/left_elbow_link.STL</uri>
+              <uri>./h1_2_meshes/left_elbow_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1274,7 +1274,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_wrist_roll_link.STL</uri>
+                ./h1_2_meshes/left_wrist_roll_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1284,7 +1284,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_wrist_roll_link.STL</uri>
+                ./h1_2_meshes/left_wrist_roll_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1336,7 +1336,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_wrist_pitch_link.STL</uri>
+                ./h1_2_meshes/left_wrist_pitch_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1346,7 +1346,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/left_wrist_pitch_link.STL</uri>
+                ./h1_2_meshes/left_wrist_pitch_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1397,7 +1397,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/L_hand_base_link.STL</uri>
+              <uri>./h1_2_meshes/L_hand_base_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1406,7 +1406,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/wrist_yaw_link.STL</uri>
+              <uri>./h1_2_meshes/wrist_yaw_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1419,7 +1419,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/L_hand_base_link.STL</uri>
+              <uri>./h1_2_meshes/L_hand_base_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1472,7 +1472,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link15_L.STL</uri>
+              <uri>./h1_2_meshes/link15_L.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1481,7 +1481,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link15_L.STL</uri>
+              <uri>./h1_2_meshes/link15_L.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1539,7 +1539,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link16_L.STL</uri>
+              <uri>./h1_2_meshes/link16_L.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1548,7 +1548,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link16_L.STL</uri>
+              <uri>./h1_2_meshes/link16_L.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1600,7 +1600,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link17_L.STL</uri>
+              <uri>./h1_2_meshes/link17_L.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1609,7 +1609,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link17_L.STL</uri>
+              <uri>./h1_2_meshes/link17_L.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1666,7 +1666,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link18_L.STL</uri>
+              <uri>./h1_2_meshes/link18_L.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1675,7 +1675,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link18_L.STL</uri>
+              <uri>./h1_2_meshes/link18_L.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1728,7 +1728,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link21_L.STL</uri>
+              <uri>./h1_2_meshes/link21_L.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1737,7 +1737,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link21_L.STL</uri>
+              <uri>./h1_2_meshes/link21_L.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1795,7 +1795,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link22_L.STL</uri>
+              <uri>./h1_2_meshes/link22_L.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1804,7 +1804,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link22_L.STL</uri>
+              <uri>./h1_2_meshes/link22_L.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1856,7 +1856,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link19_L.STL</uri>
+              <uri>./h1_2_meshes/link19_L.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1865,7 +1865,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link19_L.STL</uri>
+              <uri>./h1_2_meshes/link19_L.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1922,7 +1922,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link20_L.STL</uri>
+              <uri>./h1_2_meshes/link20_L.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1931,7 +1931,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link20_L.STL</uri>
+              <uri>./h1_2_meshes/link20_L.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1983,7 +1983,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link11_L.STL</uri>
+              <uri>./h1_2_meshes/link11_L.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -1992,7 +1992,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link11_L.STL</uri>
+              <uri>./h1_2_meshes/link11_L.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2045,7 +2045,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link12_L.STL</uri>
+              <uri>./h1_2_meshes/link12_L.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2054,7 +2054,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link12_L.STL</uri>
+              <uri>./h1_2_meshes/link12_L.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2112,7 +2112,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link13_L.STL</uri>
+              <uri>./h1_2_meshes/link13_L.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2121,7 +2121,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link13_L.STL</uri>
+              <uri>./h1_2_meshes/link13_L.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2179,7 +2179,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link14_L.STL</uri>
+              <uri>./h1_2_meshes/link14_L.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2188,7 +2188,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link14_L.STL</uri>
+              <uri>./h1_2_meshes/link14_L.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2240,7 +2240,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_shoulder_pitch_link.STL</uri>
+                ./h1_2_meshes/right_shoulder_pitch_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2250,7 +2250,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_shoulder_pitch_link.STL</uri>
+                ./h1_2_meshes/right_shoulder_pitch_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2302,7 +2302,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_shoulder_roll_link.STL</uri>
+                ./h1_2_meshes/right_shoulder_roll_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2312,7 +2312,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_shoulder_roll_link.STL</uri>
+                ./h1_2_meshes/right_shoulder_roll_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2364,7 +2364,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_shoulder_yaw_link.STL</uri>
+                ./h1_2_meshes/right_shoulder_yaw_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2374,7 +2374,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_shoulder_yaw_link.STL</uri>
+                ./h1_2_meshes/right_shoulder_yaw_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2425,7 +2425,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/right_elbow_link.STL</uri>
+              <uri>./h1_2_meshes/right_elbow_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2434,7 +2434,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/right_elbow_link.STL</uri>
+              <uri>./h1_2_meshes/right_elbow_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2486,7 +2486,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_wrist_roll_link.STL</uri>
+                ./h1_2_meshes/right_wrist_roll_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2496,7 +2496,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_wrist_roll_link.STL</uri>
+                ./h1_2_meshes/right_wrist_roll_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2548,7 +2548,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_wrist_pitch_link.STL</uri>
+                ./h1_2_meshes/right_wrist_pitch_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2558,7 +2558,7 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>
-                ./meshes_h1_2/right_wrist_pitch_link.STL</uri>
+                ./h1_2_meshes/right_wrist_pitch_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2609,7 +2609,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/R_hand_base_link.STL</uri>
+              <uri>./h1_2_meshes/R_hand_base_link.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2618,7 +2618,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/wrist_yaw_link.STL</uri>
+              <uri>./h1_2_meshes/wrist_yaw_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2631,7 +2631,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/R_hand_base_link.STL</uri>
+              <uri>./h1_2_meshes/R_hand_base_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2683,7 +2683,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link15_R.STL</uri>
+              <uri>./h1_2_meshes/link15_R.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2692,7 +2692,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link15_R.STL</uri>
+              <uri>./h1_2_meshes/link15_R.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2750,7 +2750,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link16_R.STL</uri>
+              <uri>./h1_2_meshes/link16_R.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2759,7 +2759,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link16_R.STL</uri>
+              <uri>./h1_2_meshes/link16_R.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2811,7 +2811,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link17_R.STL</uri>
+              <uri>./h1_2_meshes/link17_R.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2820,7 +2820,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link17_R.STL</uri>
+              <uri>./h1_2_meshes/link17_R.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2877,7 +2877,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link18_R.STL</uri>
+              <uri>./h1_2_meshes/link18_R.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2886,7 +2886,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link18_R.STL</uri>
+              <uri>./h1_2_meshes/link18_R.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -2939,7 +2939,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link21_R.STL</uri>
+              <uri>./h1_2_meshes/link21_R.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -2948,7 +2948,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link21_R.STL</uri>
+              <uri>./h1_2_meshes/link21_R.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -3006,7 +3006,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link22_R.STL</uri>
+              <uri>./h1_2_meshes/link22_R.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -3015,7 +3015,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link22_R.STL</uri>
+              <uri>./h1_2_meshes/link22_R.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -3068,7 +3068,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link19_R.STL</uri>
+              <uri>./h1_2_meshes/link19_R.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -3077,7 +3077,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link19_R.STL</uri>
+              <uri>./h1_2_meshes/link19_R.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -3135,7 +3135,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link20_R.STL</uri>
+              <uri>./h1_2_meshes/link20_R.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -3144,7 +3144,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link20_R.STL</uri>
+              <uri>./h1_2_meshes/link20_R.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -3197,7 +3197,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link11_R.STL</uri>
+              <uri>./h1_2_meshes/link11_R.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -3206,7 +3206,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link11_R.STL</uri>
+              <uri>./h1_2_meshes/link11_R.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -3259,7 +3259,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link12_R.STL</uri>
+              <uri>./h1_2_meshes/link12_R.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -3268,7 +3268,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link12_R.STL</uri>
+              <uri>./h1_2_meshes/link12_R.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -3326,7 +3326,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link13_R.STL</uri>
+              <uri>./h1_2_meshes/link13_R.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -3335,7 +3335,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link13_R.STL</uri>
+              <uri>./h1_2_meshes/link13_R.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -3393,7 +3393,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link14_R.STL</uri>
+              <uri>./h1_2_meshes/link14_R.STL</uri>
             </mesh>
           </geometry>
         </collision>
@@ -3402,7 +3402,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>./meshes_h1_2/link14_R.STL</uri>
+              <uri>./h1_2_meshes/link14_R.STL</uri>
             </mesh>
           </geometry>
           <material>
