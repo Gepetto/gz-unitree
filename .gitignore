@@ -43,3 +43,7 @@ with_imu.log
 with_imu_on_model.log
 without_imu.log
 build
+
+# required only when testing it out with Gepetto stuff
+h1v2-Isaac/
+unitree_sdk2_python/

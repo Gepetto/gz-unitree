@@ -31,7 +31,7 @@ install:
     #!/usr/bin/env bash
     mkdir -p build
     cd build
-    cmake ..
+    CMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/cmake:/usr/lib/cmake cmake ..
     sudo mkdir -p /usr/local/lib/gz-unitree/
     make && sudo cp libgz-unitree.so /usr/local/lib/gz-unitree/
 
@@ -41,5 +41,11 @@ sim logfile="with_imu_on_model.log":
 
 test:
     #!/usr/bin/env bash
-    cd ../h1v2-Isaac
+    if ! [ -d h1v2-Isaac ]; then 
+        git clone https://github.com/gwennlbh/h1v2-Isaac h1v2-Isaac -b devel
+    fi
+    if ! [ -d unitree_sdk2_python ]; then 
+        git clone https://github.com/unitreerobotics/unitree_sdk2_python
+    fi
+    cd h1v2-Isaac
     CYCLONEDDS_URI="{{dds_config}}" uv run --active deploy/sim2real.py
