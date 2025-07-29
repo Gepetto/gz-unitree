@@ -36,9 +36,18 @@ install:
     sudo mkdir -p /usr/local/lib/gz-unitree/
     make && sudo cp libgz-unitree.so /usr/local/lib/gz-unitree/
 
+video_recorder_plugin:
+    #!/usr/bin/env bash
+    cd gz_video_recorder
+    mkdir -p build
+    cd build
+    cmake ..
+    sudo mkdir -p /usr/local/lib/gz-video-recorder/
+    make && sudo cp libgz-video-recorder.so /usr/local/lib/gz-video-recorder/
+
 sim logfile="with_imu_on_model.log":
     echo Dont forget to add plugin filename="gz-unitree" name="gz::unitree::UnitreePlugin" to your SDF file, in the model tag
-    just install && CYCLONEDDS_URI="{{dds_config}}" GZ_SIM_SYSTEM_PLUGIN_PATH=/usr/local/lib/gz-unitree/ gz sim {{sdf_path}} -v 4
+    just install && CYCLONEDDS_URI="{{dds_config}}" GZ_SIM_SYSTEM_PLUGIN_PATH=/usr/local/lib/gz-unitree/:/usr/local/lib/gz-video-recorder gz sim {{sdf_path}} -v 4
 
 test:
     #!/usr/bin/env bash

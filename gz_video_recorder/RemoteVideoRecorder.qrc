@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="RemoteVideoRecorder/">
+  <file>RemoteVideoRecorder.qml</file>
+  <file>video_camera.svg</file>
+</qresource>
+</RCC>
