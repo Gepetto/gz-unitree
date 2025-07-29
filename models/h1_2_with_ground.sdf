@@ -175,7 +175,7 @@
       </plugin>
 
       <!-- Video recorder -->
-      <plugin filename="VideoRecorder" name="VideoRecorder">
+      <plugin filename="gz-video-recorder" name="gz::sim::gui::RemoteVideoRecorder">
         <gz-gui>
           <property key="resizable" type="bool">false</property>
           <property key="x" type="double">300</property>
@@ -195,7 +195,6 @@
       </plugin>
     </gui>
 
-    <plugin name='gz::sim::RemoteVideoRecorder' filename='gz-video-recorder' />
     <gravity>0 0 -9.8000000000000007</gravity>
     <magnetic_field>5.5644999999999998e-06 2.2875799999999999e-05 -4.2388400000000002e-05</magnetic_field>
     <atmosphere type='adiabatic' />
