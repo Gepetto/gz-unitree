@@ -22,6 +22,14 @@ set(GZ_RENDERING_VER ${gz-rendering9_VERSION_MAJOR})
 find_package(gz-transport14 REQUIRED)
 set(GZ_TRANSPORT_VER ${gz-transport14_VERSION_MAJOR})
 
+set (CMAKE_INCLUDE_CURRENT_DIR ON)
+
+# needed, otherwise the .hh is not auto-moc'd
+if(POLICY CMP0100)
+  cmake_policy(SET CMP0100 NEW)
+endif()
+
+
 set (CMAKE_AUTOMOC ON)
 
 find_package (Qt5
@@ -36,7 +44,7 @@ qt5_add_resources(resources_RCC RemoteVideoRecorder.qrc)
 
 
 
-add_library(gz-video-recorder SHARED ${headers_MOC} RemoteVideoRecorder.cc ${resources_RCC})
+add_library(gz-video-recorder SHARED RemoteVideoRecorder.hpp RemoteVideoRecorder.cc ${resources_RCC})
 target_link_libraries(
   gz-video-recorder
   gz-sim${GZ_SIM_VER}::gz-sim${GZ_SIM_VER}

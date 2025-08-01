@@ -22,10 +22,6 @@
 
 #include <gz/sim/gui/GuiSystem.hh>
 
-namespace gz
-{
-namespace sim
-{
   class RemoteVideoRecorderPrivate;
 
   /// \brief Provides video recording capabilities to the 3D scene.
@@ -43,7 +39,7 @@ namespace sim
     public: void LoadConfig(const tinyxml2::XMLElement *_pluginElem) override;
 
     // Documentation inherited
-    public: void Update(const UpdateInfo &_info, EntityComponentManager &_ecm)
+    public: void Update(const gz::sim::UpdateInfo &_info, gz::sim::EntityComponentManager &_ecm)
       override;
 
     // Documentation inherited
@@ -67,7 +63,5 @@ namespace sim
     /// \brief Pointer to private data.
     private: std::unique_ptr<RemoteVideoRecorderPrivate> dataPtr;
   };
-}
-}
 
 #endif

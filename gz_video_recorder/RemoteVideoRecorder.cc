@@ -15,7 +15,7 @@
  *
 */
 
-#include "RemoteVideoRecorder.hh"
+#include "RemoteVideoRecorder.hpp"
 
 #include <gz/msgs/boolean.pb.h>
 #include <gz/msgs/video_record.pb.h>
@@ -36,14 +36,13 @@
 #include <gz/rendering/Scene.hh>
 #include <gz/transport/Node.hh>
 #include <gz/transport/Publisher.hh>
+#include <QQmlContext>
 
 /// \brief condition variable for lockstepping video recording
 /// todo(anyone) avoid using a global condition variable when we support
 /// multiple viewports in the future.
 std::condition_variable g_renderCv;
 
-namespace gz::sim
-{
   class RemoteVideoRecorderPrivate
   {
     /// \brief Capture a video frame in the render thread.
@@ -53,19 +52,19 @@ namespace gz::sim
     public: void Initialize();
 
     /// \brief Gazebo communication node.
-    public: transport::Node node;
+    public: gz::transport::Node node;
 
     /// \brief Pointer to the camera being recorded
-    public: rendering::CameraPtr camera{nullptr};
+    public: gz::rendering::CameraPtr camera{nullptr};
 
     /// \brief Pointer to the 3D scene
-    public: rendering::ScenePtr scene{nullptr};
+    public: gz::rendering::ScenePtr scene{nullptr};
 
     /// \brief Video encoder
-    public: common::VideoEncoder videoEncoder;
+    public: gz::common::VideoEncoder videoEncoder;
 
     /// \brief Image from user camera
-    public: rendering::Image cameraImage;
+    public: gz::rendering::Image cameraImage;
 
     /// \brief True to record a video from the user camera
     public: bool recordVideo = false;
@@ -87,7 +86,7 @@ namespace gz::sim
     public: std::chrono::steady_clock::time_point startTime;
 
     /// \brief Camera pose publisher
-    public: transport::Node::Publisher recorderStatsPub;
+    public: gz::transport::Node::Publisher recorderStatsPub;
 
     /// \brief Record stats topic name
     public: std::string recorderStatsTopic = "/gui/record_video/stats";
@@ -109,10 +108,8 @@ namespace gz::sim
     /// \brief Filename of the recorded video
     public: std::string filename;
   };
-}
 
-using namespace gz;
-using namespace sim;
+
 
 /////////////////////////////////////////////////
 void RemoteVideoRecorderPrivate::Initialize()
@@ -121,13 +118,13 @@ void RemoteVideoRecorderPrivate::Initialize()
   if (this->scene)
     return;
 
-  this->scene = rendering::sceneFromFirstRenderEngine();
+  this->scene = gz::rendering::sceneFromFirstRenderEngine();
   if (!this->scene)
     return;
 
   for (unsigned int i = 0; i < this->scene->NodeCount(); ++i)
   {
-    auto cam = std::dynamic_pointer_cast<rendering::Camera>(
+    auto cam = std::dynamic_pointer_cast<gz::rendering::Camera>(
       this->scene->NodeByIndex(i));
     if (cam && cam->HasUserData("user-camera") &&
         std::get<bool>(cam->UserData("user-camera")))
@@ -147,7 +144,7 @@ void RemoteVideoRecorderPrivate::Initialize()
 
   // recorder stats topic
   this->recorderStatsPub =
-    this->node.Advertise<msgs::Time>(this->recorderStatsTopic);
+    this->node.Advertise<gz::msgs::Time>(this->recorderStatsTopic);
   gzmsg << "Video recorder stats topic advertised on ["
          << this->recorderStatsTopic << "]" << std::endl;
 }
@@ -201,7 +198,7 @@ void RemoteVideoRecorderPrivate::OnRender()
           dt = t - this->startTime;
           int64_t sec, nsec;
           std::tie(sec, nsec) = gz::math::durationToSecNsec(dt);
-          msgs::Time msg;
+          gz::msgs::Time msg;
           msg.set_sec(sec);
           msg.set_nsec(nsec);
           this->recorderStatsPub.Publish(msg);
@@ -250,8 +247,8 @@ RemoteVideoRecorder::RemoteVideoRecorder()
 RemoteVideoRecorder::~RemoteVideoRecorder() = default;
 
 //////////////////////////////////////////////////
-void RemoteVideoRecorder::Update(const UpdateInfo &_info,
-    EntityComponentManager & /*_ecm*/)
+void RemoteVideoRecorder::Update(const gz::sim::UpdateInfo &_info,
+    gz::sim::EntityComponentManager & /*_ecm*/)
 {
   this->dataPtr->simTime = _info.simTime;
 
@@ -323,12 +320,21 @@ void RemoteVideoRecorder::LoadConfig(const tinyxml2::XMLElement * _pluginElem)
 
   gz::gui::App()->findChild<
       gz::gui::MainWindow *>()->installEventFilter(this);
+
+  // Expose this plugin instance to QML as "RemoteVideoRecorder"
+  gz::gui::App()->findChild<gz::gui::MainWindow *>()->setProperty("RemoteVideoRecorder", QVariant::fromValue(this));
+
+  auto engine = gz::gui::App()->Engine();
+  if (engine)
+  {
+    engine->rootContext()->setContextProperty("RemoteVideoRecorder", this);
+  }
 }
 
 /////////////////////////////////////////////////
 bool RemoteVideoRecorder::eventFilter(QObject *_obj, QEvent *_event)
 {
-  if (_event->type() == gui::events::Render::kType)
+  if (_event->type() == gz::gui::events::Render::kType)
   {
     this->dataPtr->OnRender();
   }
@@ -360,10 +366,10 @@ void RemoteVideoRecorder::OnSave(const QString &_url)
 
   // If we cannot find an extension in the user entered file name,
   // append the format of the selected codec
-  if (common::basename(path).find(".") == std::string::npos)
+  if (gz::common::basename(path).find(".") == std::string::npos)
   {
     // Get the user selected file extension
-    std::string filenameBaseName = common::basename(this->dataPtr->filename);
+    std::string filenameBaseName = gz::common::basename(this->dataPtr->filename);
     std::string::size_type filenameExtensionIndex =
       filenameBaseName.rfind(".");
     std::string fileExtension =
@@ -373,7 +379,7 @@ void RemoteVideoRecorder::OnSave(const QString &_url)
     path += "." + fileExtension;
   }
 
-  bool result = common::moveFile(this->dataPtr->filename, path);
+  bool result = gz::common::moveFile(this->dataPtr->filename, path);
 
   if (!result)
   {
@@ -389,7 +395,7 @@ void RemoteVideoRecorder::OnSave(const QString &_url)
 /////////////////////////////////////////////////
 void RemoteVideoRecorder::OnCancel()
 {
-  if (common::exists(this->dataPtr->filename))
+  if (gz::common::exists(this->dataPtr->filename))
     std::remove(this->dataPtr->filename.c_str());
 }
 
