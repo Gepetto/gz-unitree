@@ -19,6 +19,7 @@
 
 #include <gz/msgs/boolean.pb.h>
 #include <gz/msgs/video_record.pb.h>
+#include <gz/msgs/stringmsg.pb.h>
 
 #include <iostream>
 #include <string>
@@ -36,7 +37,6 @@
 #include <gz/rendering/Scene.hh>
 #include <gz/transport/Node.hh>
 #include <gz/transport/Publisher.hh>
-#include <QQmlContext>
 
 /// \brief condition variable for lockstepping video recording
 /// todo(anyone) avoid using a global condition variable when we support
@@ -241,6 +241,10 @@ void RemoteVideoRecorderPrivate::OnRender()
 RemoteVideoRecorder::RemoteVideoRecorder()
   : GuiSystem(), dataPtr(std::make_unique<RemoteVideoRecorderPrivate>())
 {
+  this->dataPtr->node.Advertise("/gui/record_video/start",
+      &RemoteVideoRecorder::OnStartService, this);
+  this->dataPtr->node.Advertise("/gui/record_video/stop",
+      &RemoteVideoRecorder::OnStopService, this);
 }
 
 /////////////////////////////////////////////////
@@ -320,15 +324,6 @@ void RemoteVideoRecorder::LoadConfig(const tinyxml2::XMLElement * _pluginElem)
 
   gz::gui::App()->findChild<
       gz::gui::MainWindow *>()->installEventFilter(this);
-
-  // Expose this plugin instance to QML as "RemoteVideoRecorder"
-  gz::gui::App()->findChild<gz::gui::MainWindow *>()->setProperty("RemoteVideoRecorder", QVariant::fromValue(this));
-
-  auto engine = gz::gui::App()->Engine();
-  if (engine)
-  {
-    engine->rootContext()->setContextProperty("RemoteVideoRecorder", this);
-  }
 }
 
 /////////////////////////////////////////////////
@@ -397,6 +392,24 @@ void RemoteVideoRecorder::OnCancel()
 {
   if (gz::common::exists(this->dataPtr->filename))
     std::remove(this->dataPtr->filename.c_str());
+}
+
+/////////////////////////////////////////////////
+bool RemoteVideoRecorder::OnStartService(const gz::msgs::StringMsg &_req, gz::msgs::Boolean &_res)
+{
+  // Start recording with the requested format
+  this->OnStart(QString::fromStdString(_req.data()));
+  _res.set_data(true);
+  return true;
+}
+
+/////////////////////////////////////////////////
+bool RemoteVideoRecorder::OnStopService(const gz::msgs::StringMsg &_req, gz::msgs::Boolean &_res)
+{
+  // Stop recording and save to the requested file path
+  this->OnSave(QString::fromStdString(_req.data()));
+  _res.set_data(true);
+  return true;
 }
 
 // Register this plugin

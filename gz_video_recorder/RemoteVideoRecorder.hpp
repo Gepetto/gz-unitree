@@ -20,6 +20,8 @@
 
 #include <memory>
 
+#include <gz/msgs/stringmsg.pb.h>
+#include <gz/msgs/boolean.pb.h>
 #include <gz/sim/gui/GuiSystem.hh>
 
   class RemoteVideoRecorderPrivate;
@@ -58,6 +60,11 @@
 
     /// \brief Callback when user cancels saving the recorded video
     public slots: void OnCancel();
+
+    public:
+      // Service callbacks
+      bool OnStartService(const gz::msgs::StringMsg &_req, gz::msgs::Boolean &_res);
+      bool OnStopService(const gz::msgs::StringMsg &_req, gz::msgs::Boolean &_res);
 
     /// \internal
     /// \brief Pointer to private data.
