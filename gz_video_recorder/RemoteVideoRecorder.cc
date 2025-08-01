@@ -396,6 +396,3 @@ void RemoteVideoRecorder::OnCancel()
 // Register this plugin
 GZ_ADD_PLUGIN(RemoteVideoRecorder,
               gz::gui::Plugin)
-
-GZ_ADD_PLUGIN_ALIAS(RemoteVideoRecorder,
-                    "gz::sim::gui::RemoteVideoRecorder")

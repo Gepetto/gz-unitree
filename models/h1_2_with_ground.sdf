@@ -175,7 +175,7 @@
       </plugin>
 
       <!-- Video recorder -->
-      <plugin filename="gz-video-recorder" name="gz::sim::gui::RemoteVideoRecorder">
+      <plugin filename="gz-video-recorder" name="RemoteVideoRecorder">
         <gz-gui>
           <property key="resizable" type="bool">false</property>
           <property key="x" type="double">300</property>
