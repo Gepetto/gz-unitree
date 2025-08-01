@@ -406,6 +406,7 @@ bool RemoteVideoRecorder::OnStartService(const gz::msgs::StringMsg &_req, gz::ms
 /////////////////////////////////////////////////
 bool RemoteVideoRecorder::OnStopService(const gz::msgs::StringMsg &_req, gz::msgs::Boolean &_res)
 {
+  this->OnStop(); // Stop recording
   // Stop recording and save to the requested file path
   this->OnSave(QString::fromStdString(_req.data()));
   _res.set_data(true);
