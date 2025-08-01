@@ -60,5 +60,6 @@ test:
     cd h1v2-Isaac
     gz service -s /gui/move_to/pose --reqtype gz.msgs.GUICamera --reptype gz.msgs.Boolean --timeout 2000 --req "pose: { {{ camera_pose }} }"
     gz service -s /gui/record_video/start --reqtype gz.msgs.StringMsg --reptype gz.msgs.Boolean --req 'data: "mp4"'
+    gz service -s /world/empty/control --reqtype gz.msgs.WorldControl --reptype gz.msgs.Boolean --req 'pause: false'
     CYCLONEDDS_URI="{{dds_config}}" uv run --active deploy/sim2real.py || true
     gz service -s /gui/record_video/stop --reqtype gz.msgs.StringMsg --reptype gz.msgs.Boolean --req 'data: "file:///tmp/result.mp4"'
