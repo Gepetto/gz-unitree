@@ -18,9 +18,9 @@ jobs:
         run: |
           just setup
           just setup-test
-          # https://github.com/NVlabs/instant-ngp/discussions/300#discussioncomment-3985753
-          sudo apt-get install libxcb-xinerama0
       - name: Start simulator
+        env: 
+          QT_QPA_PLATFORM: offscreen
         run: |
           # start simulator in background
           just sim; simulator_pid=$!
