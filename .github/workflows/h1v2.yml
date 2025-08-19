@@ -17,9 +17,9 @@ jobs:
           just setup
           just setup-test
           just video_recorder_plugin
+          # https://stackoverflow.com/a/79261651/9943464
+          sudo apt install libxcb-xinerama0 libxcb-xkb1 libxcb1 libxcb-glx0 libqt5gui5 libqt5core5a libqt5widgets5 qt5-qmake qtbase5-dev
       - name: Start simulator
-        env:
-          QT_QPA_PLATFORM: offscreen
         run: |
           # start simulator in background
           just sim; simulator_pid=$!
