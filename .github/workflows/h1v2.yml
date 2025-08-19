@@ -14,9 +14,6 @@ jobs:
           submodules: true
       - uses: extractions/setup-just@v3
       - uses: astral-sh/setup-uv@v6
-      - uses: gazebo-tooling/setup-gazebo@v0.3.0
-        with:
-          required-gazebo-distributions: harmonic
       - name: Setup
         run: |
           just setup
