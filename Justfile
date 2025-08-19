@@ -5,7 +5,7 @@ camera_pose := "position { x: 1.9028059244155884, y: -2.756911039352417, z: 2.29
 
 sim logfile="with_imu_on_model.log":
     echo Dont forget to add plugin filename="gz-unitree" name="gz::unitree::UnitreePlugin" to your SDF file, in the model tag
-    just install && LD_LIBRARY_PATH="/usr/local/lib/gz-unitree:/usr/local/lib/gz-video-recorder${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" CYCLONEDDS_URI="{{dds_config}}" GZ_SIM_SYSTEM_PLUGIN_PATH=/usr/local/lib/gz-unitree/ GZ_GUI_PLUGIN_PATH=/usr/local/lib/gz-video-recorder gz sim --headless-rendering {{sdf_path}} -v 4 
+    just install && LD_LIBRARY_PATH="/usr/local/lib/gz-unitree:/usr/local/lib/gz-video-recorder${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" CYCLONEDDS_URI="{{dds_config}}" GZ_SIM_SYSTEM_PLUGIN_PATH=/usr/local/lib/gz-unitree/ GZ_GUI_PLUGIN_PATH=/usr/local/lib/gz-video-recorder DISPLAY= gz sim -s --headless-rendering {{sdf_path}} -v 4 
 
 setup-test:
     #!/usr/bin/env bash
@@ -23,11 +23,11 @@ test:
     #!/usr/bin/env bash
     just setup-test
     cd h1v2-Isaac
-    gz service -s /gui/move_to/pose --reqtype gz.msgs.GUICamera --reptype gz.msgs.Boolean --timeout 2000 --req "pose: { {{ camera_pose }} }"
-    gz service -s /gui/record_video/start --reqtype gz.msgs.StringMsg --reptype gz.msgs.Boolean --req 'data: "mp4"'
-    gz service -s /world/empty/control --reqtype gz.msgs.WorldControl --reptype gz.msgs.Boolean --req 'pause: false'
+    gz service -s /gui/move_to/pose --reqtype gz.msgs.GUICamera --reptype gz.msgs.Boolean --timeout 2000 --req "pose: { {{ camera_pose }} }" 2>&1 | grep -vw "libprotobuf"
+    gz service -s /gui/record_video/start --reqtype gz.msgs.StringMsg --reptype gz.msgs.Boolean --req 'data: "mp4"' 2>&1 | grep -vw "libprotobuf"
+    gz service -s /world/empty/control --reqtype gz.msgs.WorldControl --reptype gz.msgs.Boolean --req 'pause: false' 2>&1 | grep -vw "libprotobuf"
     CYCLONEDDS_URI="{{dds_config}}" uv run --active deploy/sim2real.py || true
-    gz service -s /gui/record_video/stop --reqtype gz.msgs.StringMsg --reptype gz.msgs.Boolean --req 'data: "file:///tmp/result.mp4"'
+    gz service -s /gui/record_video/stop --reqtype gz.msgs.StringMsg --reptype gz.msgs.Boolean --req 'data: "file:///tmp/result.mp4"' 2>&1 | grep -vw "libprotobuf"
 
 
 setup:
