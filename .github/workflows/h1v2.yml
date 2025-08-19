@@ -20,20 +20,22 @@ jobs:
           # https://stackoverflow.com/a/79261651/9943464
           sudo apt install libxcb-xinerama0 libxcb-xkb1 libxcb1 libxcb-glx0 libqt5gui5 libqt5core5a libqt5widgets5 qt5-qmake qtbase5-dev
       - name: Start simulator
-        run: |
-          # start simulator in background
-          just sim; simulator_pid=$!
-          # # wait for simulator to start
-          # sleep 10
-          # # run test for 30 seconds
-          # just test; test_pid=$!
-          # sleep 30
-          # # kill test
-          # kill $test_pid
-          # # wait for video recorder to finish
-          # sleep 5
-          # # kill simulator
-          # kill $simulator_pid
+        uses: coactions/setup-xvfb@v1
+        with:
+          run: |
+            # start simulator in background
+            just sim; simulator_pid=$!
+            # # wait for simulator to start
+            # sleep 10
+            # # run test for 30 seconds
+            # just test; test_pid=$!
+            # sleep 30
+            # # kill test
+            # kill $test_pid
+            # # wait for video recorder to finish
+            # sleep 5
+            # # kill simulator
+            # kill $simulator_pid
       - name: Save video as artifact
         uses: actions/upload-artifact@v4
         with:
