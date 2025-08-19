@@ -1,0 +1,41 @@
+name: Test bridge on H1v2, default policy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          submodules: true
+      - uses: extractions/setup-just@v3
+      - uses: astral-sh/setup-uv@v6
+      - uses: gazebo-tooling/setup-gazebo@v0.3.0
+        with:
+          required-gazebo-distributions: harmonic
+      - name: Setup
+        run: |
+          just setup
+          just setup-test
+      - name: Start simulator
+        run: |
+          # start simulator in background
+          just sim; simulator_pid=$!
+          # run test for 30 seconds
+          just test; test_pid=$!
+          sleep 30 
+          # kill test
+          kill $test_pid
+          # wait for video recorder to finish
+          sleep 5
+          # kill simulator
+          kill $simulator_pid
+      - name: Save video as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gz-unitree-video
+          path: /tmp/result.mp4
