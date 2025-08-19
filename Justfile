@@ -67,6 +67,9 @@ install:
 video_recorder_plugin:
     #!/usr/bin/env bash
     cd gz_video_recorder
+    if [[ -f /etc/debian_version ]]; then
+        sudo apt install --yes libgz-gui9-dev
+    fi
     mkdir -p build
     cd build
     cmake ..
