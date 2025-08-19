@@ -1,9 +1,7 @@
 name: Test bridge on H1v2, default policy
-
 on:
   push:
     branches: [main]
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -18,15 +16,16 @@ jobs:
         run: |
           just setup
           just setup-test
+          just video_recorder_plugin
       - name: Start simulator
-        env: 
+        env:
           QT_QPA_PLATFORM: offscreen
         run: |
           # start simulator in background
           just sim; simulator_pid=$!
           # run test for 30 seconds
           just test; test_pid=$!
-          sleep 30 
+          sleep 30
           # kill test
           kill $test_pid
           # wait for video recorder to finish
