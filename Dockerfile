@@ -3,6 +3,7 @@ FROM ubuntu:24.04
 RUN apt update
 RUN apt install -y curl just sudo
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+RUN source $HOME/.local/bin/env
 
 COPY . .
 RUN just setup
