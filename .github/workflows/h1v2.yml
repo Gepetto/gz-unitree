@@ -32,9 +32,11 @@ jobs:
             # kill $simulator_pid
           ' > run.sh
       - name: Start simulator
-        uses: GabrielBB/xvfb-action@v1
-        with:
-          run: bash run.sh
+        run: |
+          Xvfb :1 -screen 0 1600x1200x16  &
+          bash run.sh
+        env:
+          DISPLAY: :1.0
       - name: Save video as artifact
         uses: actions/upload-artifact@v4
         with:
