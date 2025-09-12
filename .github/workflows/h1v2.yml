@@ -16,9 +16,9 @@ jobs:
       - name: Prepare run script
         run: |
           echo '
-            just sim; simulator_pid=$!
+            just sim & simulator_pid=$!
             sleep 10
-            just test; test_pid=$!
+            just test & test_pid=$!
             sleep 30
             # kill test
             kill $test_pid
