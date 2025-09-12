@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  base:
     name: Build and push
     runs-on: ubuntu-latest
     permissions:
@@ -27,3 +27,5 @@ jobs:
           tags: |
             ghcr.io/gepetto/gz-unitree:latest
             ghcr.io/gepetto/gz-unitree:${{ github.sha }}
+
+  
