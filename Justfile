@@ -61,8 +61,8 @@ install:
     mkdir -p build
     cd build
     CMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/cmake:/usr/lib/cmake cmake ..
-    sudo mkdir -p /usr/local/lib/gz-unitree/
-    make && sudo cp libgz-unitree.so /usr/local/lib/gz-unitree/
+    mkdir -p /usr/local/lib/gz-unitree/
+    make && cp libgz-unitree.so /usr/local/lib/gz-unitree/
 
 video_recorder_plugin:
     #!/usr/bin/env bash
