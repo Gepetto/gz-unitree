@@ -5,6 +5,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    container:
+      image: docker-x-server:latest
+      options: --privileged
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
