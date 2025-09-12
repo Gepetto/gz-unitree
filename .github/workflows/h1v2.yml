@@ -1,0 +1,42 @@
+name: Test bridge on H1v2, default policy
+on:
+  push:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          submodules: true
+      - uses: extractions/setup-just@v3
+      - uses: astral-sh/setup-uv@v6
+      - name: Setup
+        run: |
+          just setup
+          just setup-test
+          just video_recorder_plugin
+          # https://stackoverflow.com/a/79261651/9943464
+          sudo apt install libxcb-xinerama0 libxcb-xkb1 libxcb1 libxcb-glx0 libqt5gui5 libqt5core5a libqt5widgets5 qt5-qmake qtbase5-dev
+      - name: Prepare run script
+        run: |
+          echo '
+            just sim; simulator_pid=$!
+            # sleep 10
+            # just test; test_pid=$!
+            # sleep 30
+            # # kill test
+            # kill $test_pid
+            # sleep 5
+            # kill $simulator_pid
+          ' > run.sh
+      - name: Start simulator
+        uses: coactions/setup-xvfb@v1
+        with:
+          run: bash run.sh
+      - name: Save video as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gz-unitree-video
+          path: /tmp/result.mp4
