@@ -28,6 +28,7 @@ jobs:
       - name: Start simulator
         run: |
           Xvfb :1 -screen 0 1600x1200x16  &
+          sleep 5
           xterm
           bash run.sh
         env:
