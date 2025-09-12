@@ -5,9 +5,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container:
-      image: docker-x-server:latest
-      options: --privileged
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
@@ -35,7 +32,7 @@ jobs:
             # kill $simulator_pid
           ' > run.sh
       - name: Start simulator
-        uses: coactions/setup-xvfb@v1
+        uses: GabrielBB/xvfb-action@v1
         with:
           run: bash run.sh
       - name: Save video as artifact
