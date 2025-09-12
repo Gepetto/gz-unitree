@@ -12,3 +12,4 @@ RUN apt install -y git ffmpeg xvfb xterm
 RUN mkdir -p /usr/local/lib/gz-unitree/
 
 RUN just install
+RUN just setup-test
