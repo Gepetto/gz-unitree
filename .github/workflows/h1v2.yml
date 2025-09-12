@@ -17,13 +17,13 @@ jobs:
         run: |
           echo '
             just sim; simulator_pid=$!
-            # sleep 10
-            # just test; test_pid=$!
-            # sleep 30
-            # # kill test
-            # kill $test_pid
-            # sleep 5
-            # kill $simulator_pid
+            sleep 10
+            just test; test_pid=$!
+            sleep 30
+            # kill test
+            kill $test_pid
+            sleep 5
+            kill $simulator_pid
           ' > run.sh
       - name: Start simulator
         run: |
