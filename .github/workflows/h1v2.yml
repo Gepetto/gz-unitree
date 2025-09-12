@@ -32,6 +32,12 @@ jobs:
           bash run.sh
         env:
           DISPLAY: :1.0
+      - name: Ensure video file exists
+        run: |
+          if [ ! -f /tmp/result.mp4 ]; then
+            echo "Error: /tmp/result.mp4 does not exist."
+            exit 1
+          fi
       - name: Save video as artifact
         uses: actions/upload-artifact@v4
         with:
