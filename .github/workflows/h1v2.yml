@@ -37,7 +37,7 @@ jobs:
           bash run.sh
         env:
           DISPLAY: :1.0
-          QT_QPA_PLATFORM: offscreen
+          QT_DEBUG_PLUGINS: "1"
       - name: Save video as artifact
         uses: actions/upload-artifact@v4
         with:
