@@ -43,26 +43,26 @@ setup:
         paru -S gz-harmonic gz-physics=7 gz-cmake3 gz-plugin2 gz-common5 sdformat=14 urdfdom gz-sensors8 gz-sim8
 
     elif [[ -f /etc/debian_version ]] && [[ ! $(command -v gz) ]]; then
-        sudo apt-get update
-        sudo apt-get install curl lsb-release gnupg
-        sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
-        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
-        sudo apt-get update
-        sudo apt-get install gz-harmonic
+        apt-get update
+        apt-get install -y curl lsb-release gnupg build-essential cmake
+        curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+        apt-get update
+        apt-get install -y gz-harmonic
     fi
 
     cd unitree_sdk2
     mkdir build; cd build
     cmake .. -DCMAKE_INSTALL_PREFIX=/opt/unitree_robotics
-    sudo make install
+    make install
 
 install:
     #!/usr/bin/env bash
     mkdir -p build
     cd build
     CMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/cmake:/usr/lib/cmake cmake ..
-    sudo mkdir -p /usr/local/lib/gz-unitree/
-    make && sudo cp libgz-unitree.so /usr/local/lib/gz-unitree/
+    mkdir -p /usr/local/lib/gz-unitree/
+    make && cp libgz-unitree.so /usr/local/lib/gz-unitree/
 
 video_recorder_plugin:
     #!/usr/bin/env bash
