@@ -5,17 +5,17 @@ camera_pose := "position { x: 1.9028059244155884, y: -2.756911039352417, z: 2.29
 
 sim logfile="with_imu_on_model.log":
     echo Dont forget to add plugin filename="gz-unitree" name="gz::unitree::UnitreePlugin" to your SDF file, in the model tag
-    just install && LD_LIBRARY_PATH="/usr/local/lib/gz-unitree:/usr/local/lib/gz-video-recorder${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" CYCLONEDDS_URI="{{dds_config}}" GZ_SIM_SYSTEM_PLUGIN_PATH=/usr/local/lib/gz-unitree/ GZ_GUI_PLUGIN_PATH=/usr/local/lib/gz-video-recorder DISPLAY= gz sim {{sdf_path}} -v 4 
+    just install && LD_LIBRARY_PATH="/usr/local/lib/gz-unitree:/usr/local/lib/gz-video-recorder${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" CYCLONEDDS_URI="{{dds_config}}" GZ_SIM_SYSTEM_PLUGIN_PATH=/usr/local/lib/gz-unitree/ GZ_GUI_PLUGIN_PATH=/usr/local/lib/gz-video-recorder DISPLAY= gz sim {{sdf_path}} -v 4
 
 setup-test:
     #!/usr/bin/env bash
-    if ! [ -d h1v2-Isaac ]; then 
+    if ! [ -d h1v2-Isaac ]; then
         git clone https://github.com/gwennlbh/h1v2-Isaac h1v2-Isaac -b devel
         cd h1v2-Isaac
         uv sync
         cd ..
     fi
-    if ! [ -d unitree_sdk2_python ]; then 
+    if ! [ -d unitree_sdk2_python ]; then
         git clone https://github.com/unitreerobotics/unitree_sdk2_python
     fi
 
