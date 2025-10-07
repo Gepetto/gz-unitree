@@ -8,6 +8,7 @@ env:
 
 concurrency:
   group: h1v2-${{ github.ref_name }}
+  cancel-in-progress: true
 
 jobs:
   test:
