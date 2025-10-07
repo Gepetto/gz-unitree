@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/gepetto/gz-unitree:latest
-      options: --user gzrun
+      options: --user 1001
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
@@ -37,7 +37,7 @@ jobs:
         run: |
           GZ_SIM_RESOURCE_PATH=/usr/share/gz/gz-sim8/worlds
           ls -la $GZ_SIM_RESOURCE_PATH
-          echo gzrun | sudo -S rm -rf $GZ_SIM_RESOURCE_PATH
+          sudo rm -rf $GZ_SIM_RESOURCE_PATH
           # add models dir to resources path
           echo GZ_SIM_RESOURCE_PATH="$GZ_SIM_RESOURCE_PATH:$(pwd)/models" >> $GITHUB_ENV
       - name: Start simulator
