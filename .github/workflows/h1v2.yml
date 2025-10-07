@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/gepetto/gz-unitree:latest
-      options: --user 1001
+      options: --user gzrun
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
