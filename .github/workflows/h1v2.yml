@@ -29,6 +29,10 @@ jobs:
             sleep 5
             kill $simulator_pid
           ' > run.sh
+      - name: (debug)
+        run: |
+          ls -la /usr/share/gz/gz-sim8/worlds
+          echo resource path is $GZ_SIM_RESOURCE_PATH
       - name: Start simulator
         run: |
           Xvfb :1 -screen 0 1600x1200x16  &
