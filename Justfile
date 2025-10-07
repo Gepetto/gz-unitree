@@ -88,4 +88,4 @@ commitwait:
     gitmoji commit
     git push
     sleep 15
-    fish -c waitci h1v2
+    fish -c "waitci h1v2"
