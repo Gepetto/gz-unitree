@@ -37,7 +37,7 @@ jobs:
         run: |
           GZ_SIM_RESOURCE_PATH=/usr/share/gz/gz-sim8/worlds
           ls -la $GZ_SIM_RESOURCE_PATH
-          rm -rf $GZ_SIM_RESOURCE_PATH
+          sudo rm -rf $GZ_SIM_RESOURCE_PATH
           # add models dir to resources path
           echo GZ_SIM_RESOURCE_PATH="$GZ_SIM_RESOURCE_PATH:$(pwd)/models" >> $GITHUB_ENV
       - name: Start simulator
