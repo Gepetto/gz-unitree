@@ -2,6 +2,10 @@ name: Test bridge on H1v2, default policy
 on:
   push:
     branches: [main]
+
+env:
+  UV_LINK_MODE: copy
+
 jobs:
   test:
     runs-on: ubuntu-latest
