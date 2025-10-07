@@ -13,3 +13,5 @@ RUN mkdir -p /usr/local/lib/gz-unitree/
 
 RUN just install
 RUN just setup-test
+
+RUN useradd --create-home --shell /bin/bash --groups sudo --password gzrun gzrun 
