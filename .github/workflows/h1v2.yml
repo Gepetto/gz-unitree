@@ -34,9 +34,11 @@ jobs:
           ' > run.sh
       - name: Set and clear GZ_SIM_RESOURCE_PATH
         run: |
-          echo GZ_SIM_RESOURCE_PATH=/usr/share/gz/gz-sim8/worlds >> $GITHUB_ENV
+          GZ_SIM_RESOURCE_PATH=/usr/share/gz/gz-sim8/worlds
           ls -la $GZ_SIM_RESOURCE_PATH
           rm -rf $GZ_SIM_RESOURCE_PATH
+          # add models dir to resources path
+          echo GZ_SIM_RESOURCE_PATH="$GZ_SIM_RESOURCE_PATH:$(pwd)/models" >> $GITHUB_ENV
       - name: Start simulator
         run: |
           Xvfb :1 -screen 0 1600x1200x16  &
