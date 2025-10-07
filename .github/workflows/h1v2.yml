@@ -27,7 +27,7 @@ jobs:
             just sim & simulator_pid=$!
             sleep 10
             just test & test_pid=$!
-            sleep 800
+            sleep 200
             # kill test
             kill $test_pid
             sleep 5
@@ -51,6 +51,7 @@ jobs:
         run: |
           if [ ! -f /tmp/result.mp4 ]; then
             echo "Error: /tmp/result.mp4 does not exist."
+            find / -iname "*.mp4"
             exit 1
           fi
       - name: Save video as artifact
