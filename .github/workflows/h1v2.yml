@@ -27,7 +27,7 @@ jobs:
             just sim & simulator_pid=$!
             sleep 10
             just test & test_pid=$!
-            sleep 400
+            sleep 800
             # kill test
             kill $test_pid
             sleep 5
