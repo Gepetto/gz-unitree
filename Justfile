@@ -82,3 +82,10 @@ video_recorder_plugin:
     cmake ..
     sudo mkdir -p /usr/local/lib/gz-video-recorder/
     make && sudo cp libgz-video-recorder.so /usr/local/lib/gz-video-recorder/
+
+commitwait:
+    git add .github Justfile
+    gitmoji commit
+    git push
+    sleep 15
+    fish -c waitci h1v2
