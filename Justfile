@@ -18,6 +18,13 @@ setup-test:
     if ! [ -d unitree_sdk2_python ]; then
         git clone https://github.com/unitreerobotics/unitree_sdk2_python
     fi
+    if command -v ufw; then
+        echo Updating ufw to allow required ports
+        sudo ufw allow in proto udp to 224.0.0.0/4
+        sudo ufw allow in proto udp from 224.0.0.0/4
+    else
+        echo UFW not installed
+    fi
 
 test:
     #!/usr/bin/env bash
