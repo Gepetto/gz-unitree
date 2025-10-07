@@ -6,6 +6,9 @@ on:
 env:
   UV_LINK_MODE: copy
 
+concurrency:
+  group: h1v2-${{ github.ref_name }}
+
 jobs:
   test:
     runs-on: ubuntu-latest
