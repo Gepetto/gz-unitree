@@ -84,7 +84,6 @@ video_recorder_plugin:
     make && sudo cp libgz-video-recorder.so /usr/local/lib/gz-video-recorder/
 
 commitwait:
-    git add .github Justfile
     gitmoji commit
     git push
     sleep 15
